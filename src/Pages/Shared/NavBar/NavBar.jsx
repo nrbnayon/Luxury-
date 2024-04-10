@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 // import ProfileImg from "../../../assets/react.svg";
 
 const NavBar = () => {
@@ -17,7 +18,7 @@ const NavBar = () => {
     document.querySelector("html").setAttribute("data-theme", getTheme);
   }, [theme]);
 
-  const [user, logOut] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -148,9 +149,16 @@ const NavBar = () => {
             </button>
           </>
         ) : (
-          <button className="border px-3 py-2 rounded-md">
-            <Link to="/login">Login</Link>
-          </button>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive
+                ? "text-primary border border-secondary px-3 py-2 rounded-md"
+                : "font-bold border px-3 py-2 rounded-md"
+            }
+          >
+            Login
+          </NavLink>
         )}
 
         <label className="cursor-pointer grid place-items-center">
