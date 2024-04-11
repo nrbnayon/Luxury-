@@ -1,7 +1,9 @@
+import BannerSlider from "../../Components/BannerSlider/BannerSlider";
+
 const Home = () => {
   return (
-    <div>
-      <p>I ama home</p>
+    <div className="w-full min-h-screen">
+      <BannerSlider />
     </div>
   );
 };
