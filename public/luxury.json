@@ -13,7 +13,8 @@
       "Poolside cabana",
       "Gourmet kitchen",
       "Spa"
-    ]
+    ],
+    "image": "https://example.com/beachfront_villa.jpg"
   },
   {
     "id": 2,
@@ -29,7 +30,8 @@
       "Infinity pool",
       "Home theater",
       "Gym"
-    ]
+    ],
+    "image": "https://example.com/beachfront_mansion.jpg"
   },
   {
     "id": 3,
@@ -45,7 +47,8 @@
       "Swimming pool",
       "Fitness center",
       "Concierge service"
-    ]
+    ],
+    "image": "https://example.com/oceanfront_penthouse.jpg"
   },
   {
     "id": 4,
@@ -56,7 +59,8 @@
     "status": "sale",
     "area": "30 acres",
     "location": "The Seychelles",
-    "facilities": ["Luxury villas", "Private marina", "Helipad", "Spa"]
+    "facilities": ["Luxury villas", "Private marina", "Helipad", "Spa"],
+    "image": "https://example.com/private_island_retreat.jpg"
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
       "Gourmet kitchen",
       "Outdoor dining area",
       "Home automation system"
-    ]
+    ],
+    "image": "https://example.com/luxurious_villa.jpg"
   },
   {
     "id": 6,
@@ -88,7 +93,8 @@
       "Home theater",
       "Wine cellar",
       "Tennis court"
-    ]
+    ],
+    "image": "https://example.com/hilltop_mansion.jpg"
   },
   {
     "id": 7,
@@ -104,7 +110,8 @@
       "Infinity pool",
       "Sauna",
       "Landscaped gardens"
-    ]
+    ],
+    "image": "https://example.com/waterfront_villa.jpg"
   },
   {
     "id": 8,
@@ -120,7 +127,8 @@
       "Outdoor hot tub",
       "Home theater",
       "Wine cellar"
-    ]
+    ],
+    "image": "https://example.com/mountain_retreat.jpg"
   },
   {
     "id": 9,
@@ -136,6 +144,7 @@
       "Infinity pools",
       "Spa and wellness center",
       "Fine dining restaurants"
-    ]
+    ],
+    "image": "https://example.com/oceanfront_resort.jpg"
   }
 ]

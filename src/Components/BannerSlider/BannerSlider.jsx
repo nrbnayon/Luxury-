@@ -5,32 +5,24 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// AOS.init();
 import Slider1 from "../../assets/Images/banner.png";
 import Slider2 from "../../assets/Images/banner2.png";
 import Slider3 from "../../assets/Images/banner3.png";
 import Slider4 from "../../assets/Images/banner4.png";
-import { useEffect, useRef } from "react";
-
+import { useEffect } from "react";
+import "./styles.css";
 export default function BannerSlider() {
-  const swiper = useRef(null);
-
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
 
-  const handleChange = () => {
-    console.log("Slide changed!");
-    swiper.current.update();
-  };
   return (
-    <div>
+    <>
       <Swiper
+        className="swiper mySwiper"
         spaceBetween={30}
         centeredSlides={true}
-        onChange={handleChange}
-        ref={swiper}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -40,19 +32,10 @@ export default function BannerSlider() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
       >
-        <SwiperSlide>
-          <div
-            className="relative h-1/2"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            <img
-              src={Slider1}
-              alt="Slider 1"
-              className="object-cover w-full h-full rounded-br-3xl"
-            />
+        <SwiperSlide className="swiper-slide">
+          <div className="relative" data-aos="fade-right" data-aos-delay="100">
+            <img src={Slider1} className=" rounded-br-3xl" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -62,7 +45,7 @@ export default function BannerSlider() {
                 Be our Guest
               </h3>
               <p
-                className="p-4 rounded-md bg-[#FFFFFFF0] text-[#C9BDAB] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl md:uppercase"
                 data-aos="fade-down"
                 data-aos-delay="200"
               >
@@ -71,18 +54,14 @@ export default function BannerSlider() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-slide">
           <div
-            className="relative h-1/2"
+            className="relative"
             data-aos="fade-left"
             data-aos-delay="600"
             data-aos-anchor="#anchor2"
           >
-            <img
-              src={Slider2}
-              alt="Slider 2"
-              className="object-cover w-full h-full rounded-br-3xl"
-            />
+            <img src={Slider2} className="rounded-br-3xl" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -92,7 +71,7 @@ export default function BannerSlider() {
                 Most Luxury
               </h3>
               <p
-                className="p-4 rounded-md bg-[#FFFFFFF0] text-[#C9BDAB] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
                 data-aos="flip-down"
                 data-aos-delay="500"
               >
@@ -101,18 +80,14 @@ export default function BannerSlider() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-slide">
           <div
-            className="relative h-1/2"
+            className="relative"
             data-aos="fade-up"
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img
-              src={Slider3}
-              alt="Slider 3"
-              className="object-cover w-full h-full rounded-br-3xl"
-            />
+            <img src={Slider3} className="rounded-br-3xl" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -122,7 +97,7 @@ export default function BannerSlider() {
                 Premier Listings
               </h3>
               <p
-                className="p-4 rounded-md bg-[#FFFFFFF0] text-[#C9BDAB] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
                 data-aos="zoom-out"
                 data-aos-delay="10000"
               >
@@ -131,18 +106,14 @@ export default function BannerSlider() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-slide">
           <div
-            className="relative h-1/2"
+            className="relative "
             data-aos="fade-down"
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img
-              src={Slider4}
-              alt="Slider 4"
-              className="object-cover w-full h-full rounded-br-3xl"
-            />
+            <img src={Slider4} className="rounded-br-3xl" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -152,7 +123,7 @@ export default function BannerSlider() {
                 Dream Homes
               </h3>
               <p
-                className="p-4 rounded-md bg-[#FFFFFFF0] text-[#C9BDAB] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
                 data-aos="fade-down"
                 data-aos-delay="1000"
               >
@@ -162,6 +133,6 @@ export default function BannerSlider() {
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </>
   );
 }
