@@ -1,18 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Root from "../Layout/Root";
-// import Home from "../Pages/Home/Home";
-// import SignUp from "./../Pages/Auth/Signup";
-import NavBar from "../Pages/Shared/NavBar/NavBar";
 import Login from "./../Pages/Auth/Login";
+import Root from "../Layout/Root";
+import Register from "./../Pages/Auth/Register";
+import Home from "../Pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Root />,
+    errorElement: <p>Error Page not Found</p>,
     children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

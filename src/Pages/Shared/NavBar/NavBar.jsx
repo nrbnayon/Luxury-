@@ -1,10 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
-// import ProfileImg from "../../../assets/react.svg";
+import Tooltip from "@mui/material/Tooltip";
 
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        console.log("Sign out successful");
+      })
+      .catch((error) => {
+        console.log("Sign Out Error:", error.message);
+      });
+  };
   const handleTheme = (e) => {
     if (e.target.checked) {
       setTheme("synthwave");
@@ -18,7 +28,6 @@ const NavBar = () => {
     document.querySelector("html").setAttribute("data-theme", getTheme);
   }, [theme]);
 
-  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -67,28 +76,18 @@ const NavBar = () => {
       )}
     </>
   );
-
-  const handleSignOut = () => {
-    logOut()
-      .then(() => {
-        console.log("Sign out successful");
-      })
-      .catch((error) => {
-        console.log("Sign Out Error:", error.message);
-      });
-  };
   return (
-    <div className="navbar bg-base-100 shadow-lg md:px-4 fixed z-10  md:pt-7 border border-red-500">
+    <div className="navbar bg-base-100 shadow-lg md:px-4 fixed z-10 container mx-auto">
       <div className="navbar-start">
         <Link
           to="/"
-          className="btn btn-ghost hidden md:flex text-base md:text-2xl text-secondary normal-case  gap-0"
+          className="btn btn-ghost hidden md:flex text-base md:text-2xl text-secondary normal-case  gap-1"
         >
           Luxury
-          <span className="text-primary ml-1">Rentals</span>
+          <span className="text-primary">Rentals</span>
         </Link>
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -112,22 +111,22 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end gap-2">
         {user ? (
           <>
             <div className="dropdown dropdown-end">
-              <div className="lg:tooltip " data-tip="hello">
+              <Tooltip title={`${user?.displayName}`} placement="left">
                 <div className="avatar online w-10 h-10 ">
                   <img
                     tabIndex={0}
                     className="rounded-full"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user.photoURL}
                   />
                 </div>
-              </div>
+              </Tooltip>
               <ul
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
