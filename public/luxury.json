@@ -1,0 +1,141 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Beachfront Resort Villa",
+    "segment_name": "Luxury",
+    "description": "Experience the epitome of luxury in this stunning resort villa. Nestled along the pristine coastline, this villa offers breathtaking ocean views, private beach access, and world-class amenities.",
+    "price": "$10,000,000",
+    "status": "sale",
+    "area": "6000 sq ft",
+    "location": "Maui, Hawaii",
+    "facilities": [
+      "Private infinity pool",
+      "Poolside cabana",
+      "Gourmet kitchen",
+      "Spa"
+    ]
+  },
+  {
+    "id": 2,
+    "estate_title": "Exclusive Beachfront Mansion",
+    "segment_name": "Luxury",
+    "description": "Indulge in luxury living in this exclusive beachfront mansion. With expansive ocean views, lavish interiors, and unparalleled privacy, this estate is perfect for those seeking the ultimate coastal retreat.",
+    "price": "$25,000,000",
+    "status": "sale",
+    "area": "12,000 sq ft",
+    "location": "Malibu, California",
+    "facilities": [
+      "Private beach access",
+      "Infinity pool",
+      "Home theater",
+      "Gym"
+    ]
+  },
+  {
+    "id": 3,
+    "estate_title": "Luxury Oceanfront Penthouse",
+    "segment_name": "Luxury",
+    "description": "Experience luxury living at its finest in this oceanfront penthouse. With panoramic views of the sea, designer finishes, and exclusive amenities, this penthouse offers the ultimate coastal lifestyle.",
+    "price": "$15,000/month",
+    "status": "rent",
+    "area": "2500 sq ft",
+    "location": "Miami Beach, Florida",
+    "facilities": [
+      "Private terrace",
+      "Swimming pool",
+      "Fitness center",
+      "Concierge service"
+    ]
+  },
+  {
+    "id": 4,
+    "estate_title": "Exclusive Private Island Retreat",
+    "segment_name": "Luxury",
+    "description": "Escape to your own private paradise on this exclusive island retreat. With pristine beaches, lush landscapes, and luxurious accommodations, this estate offers unmatched seclusion and tranquility.",
+    "price": "$50,000,000",
+    "status": "sale",
+    "area": "30 acres",
+    "location": "The Seychelles",
+    "facilities": ["Luxury villas", "Private marina", "Helipad", "Spa"]
+  },
+  {
+    "id": 5,
+    "estate_title": "Luxurious Villa with Private Pool",
+    "segment_name": "Luxury",
+    "description": "Indulge in the ultimate luxury lifestyle in this exquisite villa. Featuring a private pool, lush gardens, and elegant interiors, this villa offers unparalleled comfort and sophistication.",
+    "price": "$12,000/month",
+    "status": "rent",
+    "area": "4000 sq ft",
+    "location": "Ibiza, Spain",
+    "facilities": [
+      "Private pool",
+      "Gourmet kitchen",
+      "Outdoor dining area",
+      "Home automation system"
+    ]
+  },
+  {
+    "id": 6,
+    "estate_title": "Luxury Hilltop Mansion",
+    "segment_name": "Luxury",
+    "description": "Perched atop a scenic hill, this luxurious mansion offers panoramic views of the city skyline. With expansive living spaces, resort-style amenities, and impeccable craftsmanship, this estate is perfect for discerning buyers.",
+    "price": "$18,000,000",
+    "status": "sale",
+    "area": "15,000 sq ft",
+    "location": "Los Angeles, California",
+    "facilities": [
+      "Infinity pool",
+      "Home theater",
+      "Wine cellar",
+      "Tennis court"
+    ]
+  },
+  {
+    "id": 7,
+    "estate_title": "Exclusive Waterfront Villa",
+    "segment_name": "Luxury",
+    "description": "Embrace waterfront living in this exclusive villa overlooking the bay. With stunning views, luxurious amenities, and meticulous attention to detail, this villa offers the epitome of coastal luxury.",
+    "price": "$20,000/month",
+    "status": "rent",
+    "area": "5000 sq ft",
+    "location": "Sydney, Australia",
+    "facilities": [
+      "Private dock",
+      "Infinity pool",
+      "Sauna",
+      "Landscaped gardens"
+    ]
+  },
+  {
+    "id": 8,
+    "estate_title": "Luxury Mountain Retreat",
+    "segment_name": "Luxury",
+    "description": "Escape to the tranquility of the mountains in this luxurious retreat. Surrounded by majestic peaks and pristine nature, this estate offers unparalleled privacy and serenity.",
+    "price": "$7,500,000",
+    "status": "sale",
+    "area": "8000 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": [
+      "Ski-in/ski-out access",
+      "Outdoor hot tub",
+      "Home theater",
+      "Wine cellar"
+    ]
+  },
+  {
+    "id": 9,
+    "estate_title": "Exclusive Oceanfront Resort",
+    "segment_name": "Luxury",
+    "description": "Experience luxury resort living in this exclusive oceanfront property. With world-class amenities, pristine beaches, and impeccable service, this resort offers an unparalleled vacation experience.",
+    "price": "$30,000/week",
+    "status": "rent",
+    "area": "10 acres",
+    "location": "Maui, Hawaii",
+    "facilities": [
+      "Private beach access",
+      "Infinity pools",
+      "Spa and wellness center",
+      "Fine dining restaurants"
+    ]
+  }
+]
