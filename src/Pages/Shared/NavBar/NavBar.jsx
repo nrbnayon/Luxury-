@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Tooltip from "@mui/material/Tooltip";
-
+import Logo from "../../../assets/Images/hlogo.png";
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
@@ -81,7 +81,7 @@ const NavBar = () => {
       <div className="navbar-start">
         <Link
           to="/"
-          className="btn btn-ghost hidden md:flex text-base md:text-2xl text-secondary normal-case  gap-1"
+          className="btn btn-ghost hidden lg:flex text-base md:text-2xl text-secondary normal-case  gap-1"
         >
           Luxury
           <span className="text-primary">Rentals</span>
@@ -109,6 +109,9 @@ const NavBar = () => {
           >
             {navLinks}
           </ul>
+        </div>
+        <div className="avatar w-10 h-10 lg:hidden">
+          <img className="rounded-full" src={Logo} />
         </div>
       </div>
       <div className="navbar-center hidden md:flex">
