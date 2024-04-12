@@ -48,7 +48,7 @@ const SwiperCard = ({ houses }) => {
           modifier: 1,
           slideShadows: true,
         }}
-        className="mySwiper swipers container mx-auto"
+        className="mySwiper swipers overflow-y-hidden"
       >
         {houses.slice(0, 5).map((house) => (
           <SwiperSlide key={house.id} className="swiper-slides">

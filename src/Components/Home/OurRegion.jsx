@@ -28,10 +28,20 @@ const OurRegion = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="bg-[#C9BDAB] mt-4  rounded-sm py-4 md:pb-8 rounded-br-[50px]">
+    <div className="bg-[#C9BDAB] mt-4  rounded-sm py-4 md:pb-8 rounded-br-[50px] overflow-x-hidden">
       <div className="text-center py-4 space-y-4 my-4">
-        <h3 className="text-2xl lg:text-4xl ">OUR REGIONS</h3>
-        <p className="w-[90%] md:w-[50%] lg:w-[55%] mx-auto  text-sm lg:text-base font-normal">
+        <h3
+          className="text-2xl lg:text-4xl"
+          data-aos="fade-bottom"
+          data-aos-delay="300"
+        >
+          OUR REGIONS
+        </h3>
+        <p
+          data-aos="fade-top"
+          data-aos-delay="500"
+          className="w-[90%] md:w-[50%] lg:w-[55%] mx-auto  text-sm lg:text-base font-normal"
+        >
           Dive into the latest posts on Retro Forum! Whether coding, comedy,
           music and many more, stay updated with our vibrant community. Join the
           conversation and explore the world of retro with us!
