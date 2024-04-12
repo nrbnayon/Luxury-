@@ -45,7 +45,7 @@ export default function BannerSlider() {
                 Be our Guest
               </h3>
               <p
-                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl md:uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-secondary md:text-[#474645] text-xs font-semibold text-center md:text-2xl uppercase"
                 data-aos="fade-down"
                 data-aos-delay="200"
               >
@@ -71,7 +71,7 @@ export default function BannerSlider() {
                 Most Luxury
               </h3>
               <p
-                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-secondary md:text-[#474645] text-xs font-semibold text-center md:text-2xl uppercase"
                 data-aos="flip-down"
                 data-aos-delay="500"
               >
@@ -97,7 +97,7 @@ export default function BannerSlider() {
                 Premier Listings
               </h3>
               <p
-                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-secondary md:text-[#474645] text-xs font-semibold text-center md:text-2xl uppercase"
                 data-aos="zoom-out"
                 data-aos-delay="10000"
               >
@@ -123,7 +123,7 @@ export default function BannerSlider() {
                 Dream Homes
               </h3>
               <p
-                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-white md:text-[#474645] text-sm font-semibold text-center md:text-2xl uppercase"
+                className="p-4 rounded-md md:bg-[#FFFFFFF0] text-secondary md:text-[#474645] text-xs font-semibold text-center md:text-2xl uppercase"
                 data-aos="fade-down"
                 data-aos-delay="1000"
               >

@@ -8,10 +8,17 @@
     background-position: center;
     background-size: cover;
     width: 500px;
-    /* height: 300px; */
+    height: 80vh;
 }
 
 .swiper-slides img {
     display: block;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .swiper-slides {
+        width: 80%;
+        background-position: center;
+    }
 }

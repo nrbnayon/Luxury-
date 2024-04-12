@@ -2,7 +2,7 @@ import { Typography } from "@material-tailwind/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { FaSquareGooglePlus } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -143,7 +143,7 @@ const Login = () => {
               onClick={handleGoogleSignIn}
               className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-red-600 hover:bg-red-500 text-white"
             >
-              <FaSquareGooglePlus className="mr-1" />
+              <FcGoogle className="mr-1" />
               Google
             </button>
             <button className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white">

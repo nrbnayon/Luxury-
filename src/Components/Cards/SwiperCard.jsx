@@ -1,10 +1,10 @@
-import { useRef, useState, useLoaderData } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./styles.css";
+import { GrMapLocation } from "react-icons/gr";
 
 import {
   Card,
@@ -25,7 +25,6 @@ import {
 } from "swiper/modules";
 
 const SwiperCard = ({ houses }) => {
-  console.log("Swiper cardS", houses);
   return (
     <>
       <Swiper
@@ -45,20 +44,19 @@ const SwiperCard = ({ houses }) => {
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
-          depth: 100,
+          depth: 800,
           modifier: 1,
           slideShadows: true,
         }}
-        className="mySwiper swipers"
+        className="mySwiper swipers container mx-auto"
       >
-        {houses.map((house) => (
+        {houses.slice(0, 5).map((house) => (
           <SwiperSlide key={house.id} className="swiper-slides">
-            <Card className=" w-full shadow-lg hover:scale-105">
+            <Card className="w-full shadow-lg">
               <CardHeader floated={false} color="blue-gray">
-                <img
-                  src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  alt="ui/ux review check"
-                />
+                <div className="h-72 w-full overflow-hidden">
+                  <img src={house.image} className="h-full w-full " />
+                </div>
                 <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                 <IconButton
                   size="sm"
@@ -77,11 +75,14 @@ const SwiperCard = ({ houses }) => {
                 </IconButton>
               </CardHeader>
               <CardBody>
+                <p className="flex items-center gap-1 font-bold text-xs">
+                  <GrMapLocation /> {house.location}
+                </p>
                 <div className="mb-3 flex items-center justify-between">
                   <Typography
                     variant="h5"
                     color="blue-gray"
-                    className="font-medium"
+                    className="font-semibold text-sm md:text-2xl "
                   >
                     {house.estate_title}
                   </Typography>
@@ -104,9 +105,11 @@ const SwiperCard = ({ houses }) => {
                     5.0
                   </Typography>
                 </div>
-                <Typography color="gray">{house.price}</Typography>
-                <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
-                  <Tooltip content="$129 per night">
+                <Typography color="gray" className="text-xs md:text-xl">
+                  {house.description.slice(0, 100)}...
+                </Typography>
+                <div className="group  inline-flex flex-wrap items-center md:gap-3">
+                  <Tooltip content={house.price}>
                     <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +143,7 @@ const SwiperCard = ({ houses }) => {
                       </svg>
                     </span>
                   </Tooltip>
-                  <Tooltip content="2 bedrooms">
+                  <Tooltip content="3 bedrooms">
                     <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +157,7 @@ const SwiperCard = ({ houses }) => {
                     </span>
                   </Tooltip>
                   <Tooltip content={`65" HDTV`}>
-                    <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+                    <span className="hidden md:flex cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -171,7 +174,7 @@ const SwiperCard = ({ houses }) => {
                     </span>
                   </Tooltip>
                   <Tooltip content="Fire alert">
-                    <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+                    <span className="hidden md:flex cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -193,72 +196,21 @@ const SwiperCard = ({ houses }) => {
                   </Tooltip>
                 </div>
               </CardBody>
-              <CardFooter className="pt-3">
+              <CardFooter className="pt-0">
                 <Button size="lg" fullWidth={true}>
-                  Reserve
+                  View Property
                 </Button>
               </CardFooter>
             </Card>
           </SwiperSlide>
         ))}
-        {/* 
-        <div>
-          <div
-            id="latest-post"
-            className="grid grid-cols-1 mx-auto place-items-center md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-              <figure className="p-4 w-full h-56 ">
-                <img
-                  className="rounded-lg h-full w-full object-cover"
-                  src="images/bgbanner.png"
-                  alt=""
-                />
-              </figure>
-              <div className="px-5 space-y-4">
-                <div className="space-x-2">
-                  <i className="fa-solid fa-calendar-days"></i>
-                  <small>January 2024</small>
-                </div>
-                <a
-                  href="#"
-                  className="font-mulish text-xl text-[#12132D] font-black"
-                >
-                  What will a mars habitat force that impact in our daily
-                  life!!!
-                </a>
-                <div className="mt-2 font-inter text-[#12132D99] text-sm lg:text-base font-normal">
-                  <p>
-                    It’s one thing to subject yourself to ha Halloween costume
-                    mishap because, hey that’s your prerogative
-                  </p>
-                </div>
-                <div className="flex gap-4 items-center">
-                  <div className="avatar">
-                    <div className="w-12 rounded-full">
-                      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
-                  </div>
-                  <div className=" py-4">
-                    <p className="font-mulish text-lg text-[#12132D] font-semibold">
-                      Harry potter
-                    </p>
-                    <p className="font-inter text-[#12132D99] text-sm">
-                      Unknown
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </Swiper>
     </>
   );
 };
 
 SwiperCard.propTypes = {
-  houses: PropTypes.object.isRequired,
+  houses: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default SwiperCard;
