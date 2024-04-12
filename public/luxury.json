@@ -4,7 +4,7 @@
     "estate_title": "Luxury Beachfront Resort Villa",
     "segment_name": "Luxury",
     "description": "Experience the epitome of luxury in this stunning resort villa. Nestled along the pristine coastline, this villa offers breathtaking ocean views, private beach access, and world-class amenities.",
-    "price": "$10,000,000",
+    "price": "$10,000 / Three Day",
     "status": "sale",
     "area": "6000 sq ft",
     "location": "Maui, Hawaii",
@@ -14,7 +14,7 @@
       "Gourmet kitchen",
       "Spa"
     ],
-    "image": "https://example.com/beachfront_villa.jpg"
+    "image": "https://i.ibb.co/bd3nGn5/7.png"
   },
   {
     "id": 2,
@@ -31,11 +31,11 @@
       "Home theater",
       "Gym"
     ],
-    "image": "https://example.com/beachfront_mansion.jpg"
+    "image": "https://i.ibb.co/HHbfD0Z/villaluna.png"
   },
   {
     "id": 3,
-    "estate_title": "Luxury Oceanfront Penthouse",
+    "estate_title": "Luxury Forest Penthouse",
     "segment_name": "Luxury",
     "description": "Experience luxury living at its finest in this oceanfront penthouse. With panoramic views of the sea, designer finishes, and exclusive amenities, this penthouse offers the ultimate coastal lifestyle.",
     "price": "$15,000/month",
@@ -48,7 +48,7 @@
       "Fitness center",
       "Concierge service"
     ],
-    "image": "https://example.com/oceanfront_penthouse.jpg"
+    "image": "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
   },
   {
     "id": 4,
@@ -60,7 +60,7 @@
     "area": "30 acres",
     "location": "The Seychelles",
     "facilities": ["Luxury villas", "Private marina", "Helipad", "Spa"],
-    "image": "https://example.com/private_island_retreat.jpg"
+    "image": " https://i.ibb.co/Xxp89fD/banner2.png"
   },
   {
     "id": 5,
@@ -77,14 +77,14 @@
       "Outdoor dining area",
       "Home automation system"
     ],
-    "image": "https://example.com/luxurious_villa.jpg"
+    "image": "https://i.ibb.co/2j8WrGc/villa.png"
   },
   {
     "id": 6,
     "estate_title": "Luxury Hilltop Mansion",
     "segment_name": "Luxury",
     "description": "Perched atop a scenic hill, this luxurious mansion offers panoramic views of the city skyline. With expansive living spaces, resort-style amenities, and impeccable craftsmanship, this estate is perfect for discerning buyers.",
-    "price": "$18,000,000",
+    "price": "$18,00/Per Day",
     "status": "sale",
     "area": "15,000 sq ft",
     "location": "Los Angeles, California",
@@ -94,7 +94,7 @@
       "Wine cellar",
       "Tennis court"
     ],
-    "image": "https://example.com/hilltop_mansion.jpg"
+    "image": "https://i.ibb.co/pXxKKvd/1.png"
   },
   {
     "id": 7,
@@ -111,7 +111,7 @@
       "Sauna",
       "Landscaped gardens"
     ],
-    "image": "https://example.com/waterfront_villa.jpg"
+    "image": "https://i.ibb.co/pX8y5mF/5.png"
   },
   {
     "id": 8,
@@ -128,7 +128,7 @@
       "Home theater",
       "Wine cellar"
     ],
-    "image": "https://example.com/mountain_retreat.jpg"
+    "image": "https://i.ibb.co/hCRjpCx/villarussa.png"
   },
   {
     "id": 9,
@@ -145,6 +145,6 @@
       "Spa and wellness center",
       "Fine dining restaurants"
     ],
-    "image": "https://example.com/oceanfront_resort.jpg"
+    "image": "https://i.ibb.co/JtqDkc6/2.png"
   }
 ]
