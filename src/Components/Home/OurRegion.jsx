@@ -31,7 +31,7 @@ const OurRegion = () => {
     <div className="bg-[#C9BDAB] mt-4  rounded-sm py-4 md:pb-8 rounded-br-[50px] overflow-x-hidden">
       <div className="text-center py-4 space-y-4 my-4">
         <h3
-          className="text-2xl lg:text-4xl"
+          className="text-2xl lg:text-4xl font-black bg-gradient-to-r from-blue-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300%  animate-gradient"
           data-aos="fade-bottom"
           data-aos-delay="300"
         >

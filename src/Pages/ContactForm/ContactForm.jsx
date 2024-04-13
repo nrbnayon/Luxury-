@@ -68,7 +68,7 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px]  bg-white  p-4 ">
+          <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px] rounded-lg text-black bg-white  p-4 ">
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="firstname" className="text-sm block mb-1">
                 Name

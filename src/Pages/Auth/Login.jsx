@@ -76,7 +76,7 @@ const Login = () => {
   };
   return (
     <div className="hero min-h-[calc(100vh-100px)] bg-[url('/bg1.png')]  rounded-xl">
-      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-80">
+      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-80 my-4 md:my-10">
         <form onSubmit={handleLogin} className="card-body">
           <h1 className="text-xl text-center md:text-3xl font-bold">
             Login Your Profile

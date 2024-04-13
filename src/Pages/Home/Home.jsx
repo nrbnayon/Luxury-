@@ -34,11 +34,11 @@ const Home = () => {
 
   const houses = useLoaderData();
   return (
-    <div className="overflow-y-hidden">
-      <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+    <div className="overflow-x-hidden overflow-y-hidden">
+      <div data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
         <BannerSlider />
       </div>
-      <div data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
         <Description />
       </div>
       <div data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
