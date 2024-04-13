@@ -8,7 +8,7 @@ import EstatesCard from "../../Components/Cards/EstatesCard";
 import OurRegion from "../../Components/Home/OurRegion";
 import OurService from "../../Components/Home/OurService";
 import AboutUs from "../AboutUs/AboutUs";
-import Footer from "./../Shared/Footer/Footer";
+import ContactForm from "../ContactForm/ContactForm";
 
 const Home = () => {
   useEffect(() => {
@@ -53,9 +53,9 @@ const Home = () => {
       <div data-aos="fade-down" data-aos-delay="600" data-aos-duration="1000">
         <AboutUs />
       </div>
-      {/* <div data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
-        <Footer />
-      </div> */}
+      <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1000">
+        <ContactForm />
+      </div>
     </div>
   );
 };

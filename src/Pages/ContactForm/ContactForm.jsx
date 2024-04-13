@@ -1,95 +1,26 @@
-import FooterLogo from "/logo.png";
-const Footer = () => {
+import FormBG from "../../assets/Images/9.png";
+const ContactForm = () => {
   return (
-    <div className="py-4 md:py-10 bg-[#DFE3E7] mt-6 z-10">
-      <footer className="px-4 divide-y text-gray-800 container mx-auto">
-        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div className="lg:w-1/3">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex justify-center space-x-3 lg:justify-start"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-                <img
-                  src={FooterLogo}
-                  alt="FooterLogo"
-                  className=" rounded-full"
-                />
+    <div className="relative my-6">
+      <img src={FormBG} alt="FormBG" className="hidden md:flex" />
+      <div className="md:absolute md:inset-0  md:w-2/3 mx-auto md:h-1/2 my-auto p-4 ">
+        <div className=" md:p-6 rounded-md flex flex-col md:flex-row gap-2">
+          <div className="bg-[#181D24] md:w-1/3 p-4 rounded-tr-[50px] rounded-md text-center text-gray-400 text-base font-medium">
+            <h3 className="text-xl font-bold mb-4 text-white">
+              Let&apos;s Connect
+            </h3>
+            <p>Phone : 00000000000</p>
+            <p>Email : luxury@gmail.com</p>
+            <p>
+              Address : Level-4, 34,
+              <br />
+              Awal Centre, <br /> Banani, Dhaka
+            </p>
+            <div className="space-y-3 ">
+              <div className="uppercase text-white font-bold underline">
+                Social media
               </div>
-              <span className="self-center text-2xl font-semibold">
-                Luxury Rentals
-              </span>
-            </a>
-          </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">
-                Product
-              </h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Integrations
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">
-                Company
-              </h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-900">Developers</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Public API
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Guides
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <div className="uppercase dark:text-gray-900">Social media</div>
-              <div className="flex justify-start space-x-3">
+              <div className="flex justify-center space-x-3">
                 <a
                   rel="noopener noreferrer"
                   href="#"
@@ -137,13 +68,44 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px]  bg-white  p-4 ">
+            <div className="col-span-6 sm:col-span-3">
+              <label htmlFor="firstname" className="text-sm block mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full ring-violet-600 border-b-2"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-3">
+              <label htmlFor="email" className="text-sm block mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full ring-violet-600 border-b-2"
+              />
+            </div>
+            <div className="col-span-6">
+              <label htmlFor="message" className="text-sm block mb-1">
+                Message
+              </label>
+              <textarea
+                placeholder="Write Your Message"
+                className="w-full ring-violet-600 border-b-2"
+              />
+              <button className="w-full btn btn-outline text-center">
+                SEND
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="py-6 text-sm text-center dark:text-gray-600">
-          © 2024 Luxury Rentals. All rights reserved.
-        </div>
-      </footer>
+      </div>
     </div>
   );
 };
 
-export default Footer;
+export default ContactForm;
