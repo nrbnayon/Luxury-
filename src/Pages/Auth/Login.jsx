@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+// import bg from "../../assets/Images/banner3.png";
 const Login = () => {
   const [googleLoginUser, setGoogleLoginUser] = useState(null);
   const [loginError, setLoginError] = useState(null);
@@ -75,8 +75,8 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-[calc(100vh-100px)] bg-base-300 rounded-xl">
-      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200">
+    <div className="hero min-h-[calc(100vh-100px)] bg-[url('/bg1.png')]  rounded-xl">
+      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-80">
         <form onSubmit={handleLogin} className="card-body">
           <h1 className="text-xl text-center md:text-3xl font-bold">
             Login Your Profile
@@ -141,7 +141,7 @@ const Login = () => {
             </button>
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-red-600 hover:bg-red-500 text-white"
+              className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-indigo-500 hover:bg-cyan-400 text-white"
             >
               <FcGoogle className="mr-1" />
               Google

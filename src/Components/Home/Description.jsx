@@ -3,7 +3,7 @@ const Description = () => {
     <section>
       <div className="text-center py-4 space-y-6 my-4 bg-blue-gray-50 rounded-md">
         <h3 className="text-2xl lg:text-4xl text-[#181D24] font-black">
-          Top Pick Villas
+          Top Pick Estates Villas
         </h3>
         <p className="w-[90%] md:w-[50%] lg:w-[55%] mx-auto text-[#181D24] text-sm lg:text-base font-normal">
           Dive into the latest posts on Retro Forum! Whether coding, comedy,

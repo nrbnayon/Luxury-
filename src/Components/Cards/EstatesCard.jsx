@@ -24,7 +24,7 @@ import {
   Pagination,
 } from "swiper/modules";
 
-const SwiperCard = ({ houses }) => {
+const EstatesCard = ({ houses }) => {
   return (
     <>
       <Swiper
@@ -50,7 +50,7 @@ const SwiperCard = ({ houses }) => {
         }}
         className="mySwiper swipers overflow-y-hidden"
       >
-        {houses.slice(0, 5).map((house) => (
+        {houses.map((house) => (
           <SwiperSlide key={house.id} className="swiper-slides">
             <Card className="w-full shadow-lg">
               <CardHeader floated={false} color="blue-gray">
@@ -209,8 +209,8 @@ const SwiperCard = ({ houses }) => {
   );
 };
 
-SwiperCard.propTypes = {
+EstatesCard.propTypes = {
   houses: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default SwiperCard;
+export default EstatesCard;
