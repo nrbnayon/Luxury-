@@ -37,7 +37,17 @@ const NavBar = () => {
             isActive ? "text-primary border border-secondary" : "font-bold"
           }
         >
-          Home
+          HOME
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/villas"
+          className={({ isActive }) =>
+            isActive ? "text-primary border border-secondary" : "font-bold"
+          }
+        >
+          VILLAS
         </NavLink>
       </li>
       <li>
@@ -47,7 +57,7 @@ const NavBar = () => {
             isActive ? "text-primary border border-secondary" : "font-bold"
           }
         >
-          Update Profile
+          UPDATE PROFILE
         </NavLink>
       </li>
       <li>
@@ -57,7 +67,27 @@ const NavBar = () => {
             isActive ? "text-primary border border-secondary" : "font-bold"
           }
         >
-          User Profile
+          USER PROFILE
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            isActive ? "text-primary border border-secondary" : "font-bold"
+          }
+        >
+          SERVICES
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "text-primary border border-secondary" : "font-bold"
+          }
+        >
+          CONTACT
         </NavLink>
       </li>
       {user && user ? (

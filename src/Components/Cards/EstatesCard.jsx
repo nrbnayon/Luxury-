@@ -24,7 +24,7 @@ import {
   Pagination,
 } from "swiper/modules";
 
-const EstatesCard = ({ houses }) => {
+const EstatesCard = ({ villas }) => {
   return (
     <>
       <Swiper
@@ -50,12 +50,12 @@ const EstatesCard = ({ houses }) => {
         }}
         className="mySwiper swipers overflow-y-hidden"
       >
-        {houses.map((house) => (
-          <SwiperSlide key={house.id} className="swiper-slides">
+        {villas.map((villa) => (
+          <SwiperSlide key={villa.id} className="swiper-slides">
             <Card className="w-full shadow-lg">
               <CardHeader floated={false} color="blue-gray">
                 <div className="h-72 w-full overflow-hidden">
-                  <img src={house.image} className="h-full w-full " />
+                  <img src={villa.image} className="h-full w-full " />
                 </div>
                 <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                 <IconButton
@@ -76,7 +76,7 @@ const EstatesCard = ({ houses }) => {
               </CardHeader>
               <CardBody>
                 <p className="flex items-center gap-1 font-bold text-xs">
-                  <GrMapLocation /> {house.location}
+                  <GrMapLocation /> {villa.location}
                 </p>
                 <div className="mb-3 flex items-center justify-between">
                   <Typography
@@ -84,7 +84,7 @@ const EstatesCard = ({ houses }) => {
                     color="blue-gray"
                     className="font-semibold text-sm md:text-2xl "
                   >
-                    {house.estate_title}
+                    {villa.estate_title}
                   </Typography>
                   <Typography
                     color="blue-gray"
@@ -106,10 +106,10 @@ const EstatesCard = ({ houses }) => {
                   </Typography>
                 </div>
                 <Typography color="gray" className="text-xs md:text-xl">
-                  {house.description.slice(0, 100)}...
+                  {villa.description.slice(0, 100)}...
                 </Typography>
                 <div className="group  inline-flex flex-wrap items-center md:gap-3">
-                  <Tooltip content={house.price}>
+                  <Tooltip content={villa.price}>
                     <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@ const EstatesCard = ({ houses }) => {
 };
 
 EstatesCard.propTypes = {
-  houses: PropTypes.arrayOf(PropTypes.object),
+  villas: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default EstatesCard;

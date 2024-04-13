@@ -14,7 +14,7 @@
       "Gourmet kitchen",
       "Spa"
     ],
-    "image": "https://i.ibb.co/qYxz3pz/7.png"
+    "image": "https://i.ibb.co/pX8y5mF/5.png"
   },
   {
     "id": 2,
@@ -111,7 +111,7 @@
       "Sauna",
       "Landscaped gardens"
     ],
-    "image": "https://i.ibb.co/pX8y5mF/5.png"
+    "image": "https://i.ibb.co/qYxz3pz/7.png"
   },
   {
     "id": 8,
@@ -146,5 +146,22 @@
       "Fine dining restaurants"
     ],
     "image": "https://i.ibb.co/JtqDkc6/2.png"
+  },
+  {
+    "id": 10,
+    "estate_title": "Secluded Mountain Retreat",
+    "segment_name": "Luxury",
+    "description": "Escape to this secluded mountain retreat and immerse yourself in the tranquility of nature. Surrounded by lush forests and breathtaking mountain views, this exclusive estate offers the ultimate getaway for relaxation and rejuvenation.",
+    "price": "$25,000/week",
+    "status": "rent",
+    "area": "20 acres",
+    "location": "Aspen, Colorado",
+    "facilities": [
+      "Private hiking trails",
+      "Outdoor hot tub",
+      "Gourmet kitchen",
+      "Home theater"
+    ],
+    "image": "https://i.ibb.co/R9xrdJn/vv.png"
   }
 ]

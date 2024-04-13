@@ -32,7 +32,7 @@ const Home = () => {
     });
   }, []);
 
-  const houses = useLoaderData();
+  const villas = useLoaderData();
   return (
     <div className="overflow-x-hidden overflow-y-hidden">
       <div data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
@@ -42,7 +42,7 @@ const Home = () => {
         <Description />
       </div>
       <div data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
-        <EstatesCard houses={houses} />
+        <EstatesCard villas={villas} />
       </div>
       <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
         <OurRegion />

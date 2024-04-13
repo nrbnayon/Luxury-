@@ -3,7 +3,7 @@ import about2 from "../../assets/Images/about.png";
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-6">
+    <div className="flex flex-col lg:flex-row lg:space-x-6  justify-center">
       <div className="max-w-lg bg-white shadow-xl rounded-lg p-6">
         <h3 className="text-3xl font-semibold mb-4">About Us</h3>
         <p className="text-gray-700 mb-4">
