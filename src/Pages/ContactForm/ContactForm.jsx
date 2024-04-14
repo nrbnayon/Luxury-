@@ -2,10 +2,10 @@ import FormBG from "../../assets/Images/9.png";
 const ContactForm = () => {
   return (
     <div className="relative my-6">
-      <img src={FormBG} alt="FormBG" className="hidden md:flex" />
-      <div className="md:absolute md:inset-0  md:w-2/3 mx-auto md:h-1/2 my-auto p-4 ">
+      <img src={FormBG} alt="FormBG" className="hidden lg:flex" />
+      <div className="lg:absolute md:inset-0  lg:w-2/3 mx-auto md:h-1/2 my-auto p-4 ">
         <div className=" md:p-6 rounded-md flex flex-col md:flex-row gap-2">
-          <div className="bg-[#181D24] md:w-1/3 p-4 rounded-tr-[50px] rounded-md text-center text-gray-400 text-base font-medium">
+          <div className="bg-[#181D24] lg:w-1/3 p-4 rounded-tr-[50px] rounded-md text-center text-gray-400 text-base font-medium">
             <h3 className="text-xl font-bold mb-4 text-white">
               Let&apos;s Connect
             </h3>
@@ -70,9 +70,7 @@ const ContactForm = () => {
           </div>
           <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px] rounded-lg text-black bg-white  p-4 ">
             <div className="col-span-6 sm:col-span-3">
-              <label htmlFor="firstname" className="text-sm block mb-1">
-                Name
-              </label>
+              <label className="text-sm block mb-1">Name</label>
               <input
                 type="text"
                 placeholder="Name"

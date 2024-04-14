@@ -13,7 +13,7 @@ const OurService = () => {
         <h3 className="text-2xl lg:text-4xl text-center font-bold  uppercase">
           Our properties specialities
         </h3>
-        <div className="flex md:w-2/3 mx-auto px-2 flex-wrap gap-2 md:flex-row justify-between items-center my-4 md:my-8">
+        <div className="flex lg:w-2/3 mx-auto px-2 flex-wrap gap-2 lg:flex-row justify-between items-center my-4 lg:my-8">
           <div className="space-y-2">
             <LuWaves />
             <h3 className="text-xl font-bold">Seafront</h3>
@@ -22,7 +22,6 @@ const OurService = () => {
             </p>
           </div>
           <Divider orientation="vertical" variant="middle" flexItem />
-
           <div className="space-y-2">
             <MdOutlinePets />
             <h3 className="text-xl font-bold">Pet Friendly</h3>

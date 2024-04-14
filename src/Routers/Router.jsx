@@ -7,6 +7,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import ContactForm from "../Pages/ContactForm/ContactForm";
 import OurService from "../Components/Home/OurService";
 import Villas from "../Pages/EstateVillas/EstateVillas";
+import EstateDetails from "../Components/Cards/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
         loader: () => fetch("/luxury.json"),
       },
       {
-        path: "/villas",
+        path: "/estatevillas",
         element: <Villas />,
         loader: () => fetch("/luxury.json"),
       },
@@ -39,6 +40,15 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactForm />,
+      },
+      {
+        path: "/estatedetails/:id",
+        element: <EstateDetails />,
+        loader: async ({ params }) => {
+          const response = await fetch(`/luxury.json`);
+          const data = await response.json();
+          return data.find((estate) => estate.id === parseInt(params.id));
+        },
       },
     ],
   },

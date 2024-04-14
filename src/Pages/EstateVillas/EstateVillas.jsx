@@ -1,24 +1,59 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Villa from "./EstateVilla";
 import { GrMapLocation } from "react-icons/gr";
 import { Tooltip } from "@material-tailwind/react";
 import { FaShieldHeart } from "react-icons/fa6";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LoaderSpinner from "../../Components/LoaderSpinner/LoaderSpinner";
 
 const Villas = () => {
+  const navigation = useNavigation();
   const villas = useLoaderData();
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredVillas, setFilteredVillas] = useState([]);
   useEffect(() => {
     AOS.init();
   }, []);
 
+  useEffect(() => {
+    const filtered = villas.filter((villa) =>
+      villa.estate_title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredVillas(filtered);
+  }, [searchQuery, villas]);
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchButtonClick = () => {
+    const filtered = villas.filter((villa) =>
+      villa.estate_title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredVillas(filtered);
+  };
+  if (navigation.state === "loading" || !villas || !filteredVillas) {
+    return <LoaderSpinner />;
+  }
   return (
-    <div>
+    <div className="overflow-x-hidden overflow-y-hidden">
       <div className="text-center">
-        <h3 className="text-xl font-semibold mb-2">All Villas</h3>
-        <p className="text-sm text-gray-500">{villas.length} result</p>
+        <h3 className="text-2xl font-semibold my-4">All Villas</h3>
+        {/* <p className="text-sm text-gray-500">{villas.length} results</p> */}
+      </div>
+      <div className="flex items-center justify-center md:w-1/3  rounded-[30px] mx-auto space-x-2 border bg-gray-200">
+        <input
+          type="text"
+          placeholder="Search Villas..."
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+          className="border-none rounded-md w-2/3 h-8 focus:outline-none bg-gray-200"
+        />
+        <button onClick={handleSearchButtonClick} className="btn ">
+          Search
+        </button>
       </div>
       <section className="dark:bg-gray-100 dark:text-gray-800">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
@@ -64,12 +99,22 @@ const Villas = () => {
                   5.0
                 </div>
               </div>
-              <span className="flex items-center gap-1 font-bold text-xs dark:text-gray-600">
-                <GrMapLocation />
-                {villas[0].location}
-              </span>
+              <div className="flex justify-between items-center font-bold text-xs dark:text-gray-600">
+                <p
+                  className="flex items-center gap-1 "
+                  data-aos="zoom-out"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <GrMapLocation />
+                  {villas[0].location}
+                </p>
+                <p data-aos="zoom-in" data-aos-delay="200">
+                  Area: {villas[0].area}
+                </p>
+              </div>
               <p className="text-lg text-gray-700">{villas[0].description}</p>
-              <div className="group  inline-flex flex-wrap items-center md:gap-3 py-4">
+              <div className="group flex flex-wrap items-center justify-between  py-4">
                 <Tooltip content={villas[0].price}>
                   <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                     <svg
@@ -156,7 +201,10 @@ const Villas = () => {
                   </span>
                 </Tooltip>
               </div>
-              <Link className="w-full">
+              <Link
+                to={`/estatedetails/${parseInt(villas[0].id)}`}
+                className="w-full"
+              >
                 <button className="btn btn-outline w-full border-secondary uppercase">
                   View Property
                 </button>
@@ -164,7 +212,7 @@ const Villas = () => {
             </div>
           </div>
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {villas.slice(1, 10).map((villa) => (
+            {filteredVillas.slice(1, 10).map((villa) => (
               <Villa deletable={false} key={villa.id} villa={villa} />
             ))}
           </div>

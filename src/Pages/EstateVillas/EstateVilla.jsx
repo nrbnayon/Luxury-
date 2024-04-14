@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Tooltip } from "@material-tailwind/react";
 import { GrMapLocation } from "react-icons/gr";
@@ -6,8 +6,10 @@ import { FaShieldHeart } from "react-icons/fa6";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LoaderSpinner from "../../Components/LoaderSpinner/LoaderSpinner";
 
 const Villa = ({ villa }) => {
+  const navigation = useNavigation();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -24,11 +26,13 @@ const Villa = ({ villa }) => {
     facilities,
     image,
   } = villa;
-
+  if (navigation.state === "loading" || !villa) {
+    return <LoaderSpinner />;
+  }
   return (
     <div className="overflow-x-hidden overflow-y-hidden">
       <div
-        className="max-w-sm relative rounded-md mx-auto group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50"
+        className="max-w-sm relative rounded-md mx-auto group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]"
         data-aos="fade-up"
       >
         <div
@@ -38,7 +42,7 @@ const Villa = ({ villa }) => {
         >
           <img
             role="presentation"
-            className="object-cover w-full rounded h-44 dark:bg-gray-500"
+            className=" w-full rounded-md h-44 dark:bg-gray-500"
             src={image}
             alt="villa img"
           />
@@ -67,18 +71,23 @@ const Villa = ({ villa }) => {
           >
             {description.slice(0, 100)}...
           </span>
-          <p
-            className="flex items-center gap-1 font-bold text-xs dark:text-gray-600"
-            data-aos="zoom-out"
-            data-aos-delay="300"
-            data-aos-duration="1000"
-          >
-            <GrMapLocation />
-            {location}
-          </p>
+          <div className="flex justify-between items-center font-bold text-xs dark:text-gray-600">
+            <p
+              className="flex items-center gap-1 "
+              data-aos="zoom-out"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              <GrMapLocation />
+              {location}
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="200">
+              Area: {area}
+            </p>
+          </div>
         </div>
         <div
-          className="group  inline-flex flex-wrap items-center md:gap-3 py-4"
+          className="group  flex flex-wrap items-center justify-between md:gap-3 py-4"
           data-aos="zoom-in"
           data-aos-delay="400"
           data-aos-duration="1000"
@@ -173,9 +182,9 @@ const Villa = ({ villa }) => {
           className="p-4 mb-4 mx-auto"
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
         >
-          <Link>
+          <Link to={`/estatedetails/${parseInt(id)}`}>
             <button className="btn btn-outline w-full border-primary uppercase">
               View Property
             </button>

@@ -23,6 +23,7 @@ import {
   Navigation,
   Pagination,
 } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const EstatesCard = ({ villas }) => {
   return (
@@ -197,9 +198,11 @@ const EstatesCard = ({ villas }) => {
                 </div>
               </CardBody>
               <CardFooter className="pt-0">
-                <Button size="lg" fullWidth={true}>
-                  View Property
-                </Button>
+                <Link to={`/estatedetails/${parseInt(villa.id)}`}>
+                  <Button size="lg" fullWidth={true}>
+                    View Property
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           </SwiperSlide>
