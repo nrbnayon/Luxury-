@@ -323,14 +323,14 @@ const EstateDetails = () => {
         <h3 className="flex items-center text-2xl justify-center uppercase gap-1 text-center font-extrabold my-4">
           Availability
         </h3>
-        <div className="flex justify-between md:w-2/3 mx-auto flex-col md:flex-row ">
+        <div className="flex justify-between md:w-2/3 mx-auto flex-col md:flex-row items-center">
           <div className="bg-white rounded text-black">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateCalendar />
             </LocalizationProvider>
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-bold mb-4 uppercase">
+            <h3 className="text-xl text-center font-bold mb-4 uppercase">
               Book Your Villa
             </h3>
             <button className="btn bg-[#5B656F] w-full text-white flex items-center uppercase">

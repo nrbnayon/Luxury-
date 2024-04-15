@@ -1,16 +1,16 @@
 import { Typography } from "@material-tailwind/react";
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
-// import bg from "../../assets/Images/banner3.png";
+import { toast } from "react-toastify";
 const Login = () => {
   const [googleLoginUser, setGoogleLoginUser] = useState(null);
   const [loginError, setLoginError] = useState(null);
-  const emailRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const { signInUser, loginWithGoogle, loginWithGithub } =
     useContext(AuthContext);
 
@@ -34,7 +34,7 @@ const Login = () => {
       const user = userCredential.user;
 
       if (user) {
-        setLoginError("Login Successful");
+        toast.success("Login Successfully");
         navigate(location?.state ? location.state : "/");
       }
     } catch (error) {
@@ -88,7 +88,6 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              ref={emailRef}
               placeholder="Enter your email"
               className="input input-bordered"
               required
@@ -105,11 +104,7 @@ const Login = () => {
               className="input input-bordered"
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+
             {loginError && <p>{loginError}</p>}
             <div className="mt-2">
               <button className="btn btn-primary w-full">Login</button>

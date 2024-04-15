@@ -3,16 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Tooltip from "@mui/material/Tooltip";
 import Logo from "../../../assets/Images/hlogo.png";
+import LoaderSpinner from "../../../Components/LoaderSpinner/LoaderSpinner";
+import { toast } from "react-toastify";
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
       .then(() => {
-        console.log("Sign out successful");
+        toast.success("Sign out successfully");
       })
       .catch((error) => {
-        console.log("Sign Out Error:", error.message);
+        toast.warn("Sign Out Error:", error.message);
       });
   };
   const handleTheme = (e) => {
@@ -92,6 +94,9 @@ const NavBar = () => {
       </li>
     </>
   );
+  if (loading) {
+    return <LoaderSpinner />;
+  }
   return (
     <div className="navbar bg-base-100 shadow-lg md:px-4 fixed z-10 container mx-auto">
       <div className="navbar-start">

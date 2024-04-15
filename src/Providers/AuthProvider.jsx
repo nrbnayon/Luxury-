@@ -18,16 +18,12 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
-
+  const [profileUpdating, setProfileUpdating] = useState(false);
   const githubProvider = new GithubAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
-  };
-  const loginWithGoogle = () => {
-    setLoading(true);
-    return signInWithPopup(auth, googleProvider);
   };
 
   const loginWithGithub = () => {
@@ -35,14 +31,15 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
-  const updateProfile = (user, profileData) => {
+  const updateProfile = async (user, profileData) => {
     try {
-      updateUserProfile(user, profileData);
+      setProfileUpdating(true);
+      await updateUserProfile(user, profileData);
+      setProfileUpdating(false);
     } catch (error) {
       throw new Error("Failed to update profile: " + error.message);
     }
   };
-
   const signInUser = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -57,7 +54,10 @@ const AuthProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
-
+  const loginWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -72,6 +72,7 @@ const AuthProvider = ({ children }) => {
     loading,
     updateProfile,
     loginWithGithub,
+    profileUpdating,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
@@ -81,13 +82,3 @@ AuthProvider.propTypes = {
   children: PropTypes.node,
 };
 export default AuthProvider;
-
-// signInWithPopup(auth, githubProvider)
-//   .then((result) => {
-//     console.log("SignIn github Success", result.user);
-//     const newUser = result.user;
-//     setGoogleLoginUser(newUser);
-//   })
-//   .catch((error) => {
-//     console.error(error.message);
-//   });

@@ -1,13 +1,16 @@
 import { Typography } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, updateProfile } = useContext(AuthContext);
+  const { createUser, updateProfile, loading, profileUpdating } =
+    useContext(AuthContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -20,25 +23,41 @@ const Register = () => {
     const cpassword = form.get("cpassword");
     const terms = e.target.terms.checked;
     setError("");
-    if (password !== cpassword && password.length > 6) {
+    if (password !== cpassword) {
       setError("Passwords do not match");
       return;
-    } else if (!/[A-Z]/.test(password)) {
-      setError("Password Should need At least One Uppercase Alphabet");
+    } else if (password.length < 6) {
+      setError("Passwords should be at least 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+      setError(
+        "Password Should need At least one uppercase and one lowercase letter."
+      );
       return;
     }
     if (!terms) {
       setError("Need to accept our terms and condition");
       return;
     }
+    // try {
+    //   const result = await createUser(email, password);
+    //   await updateProfile(result.user, {
+    //     displayName: username,
+    //     photoURL: photourl,
+    //   });
+    //   toast.success("Register Successful");
+    //   navigate("/");
+    // } catch (error) {
+    //   setError(error.message);
+    // }
     try {
       const result = await createUser(email, password);
       await updateProfile(result.user, {
         displayName: username,
         photoURL: photourl,
       });
-      console.log("Register Successful", result.user);
-      setError("Register Successful");
+      toast.success("Register Successful");
+      navigate("/");
     } catch (error) {
       setError(error.message);
     }
@@ -142,7 +161,12 @@ const Register = () => {
             </label>
           </div>
           <div className="mt-4">
-            <button className="btn btn-primary w-full">Register</button>
+            <button
+              className="btn btn-primary w-full"
+              disabled={loading || profileUpdating}
+            >
+              Register
+            </button>
           </div>
           {error && <p>{error}</p>}
           <Typography variant="small" className="mt-6 flex justify-center">

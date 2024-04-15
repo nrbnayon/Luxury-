@@ -8,6 +8,7 @@ import ContactForm from "../Pages/ContactForm/ContactForm";
 import OurService from "../Components/Home/OurService";
 import Villas from "../Pages/EstateVillas/EstateVillas";
 import EstateDetails from "../Components/Cards/EstateDetails";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -42,13 +43,25 @@ const router = createBrowserRouter([
         element: <ContactForm />,
       },
       {
+        path: "/updateprofile",
+        element: (
+          <PrivateRouter>
+            <EstateDetails />
+          </PrivateRouter>
+        ),
+      },
+      {
         path: "/estatedetails/:id",
-        element: <EstateDetails />,
         loader: async ({ params }) => {
           const response = await fetch(`/luxury.json`);
           const data = await response.json();
           return data.find((estate) => estate.id === parseInt(params.id));
         },
+        element: (
+          <PrivateRouter>
+            <EstateDetails />
+          </PrivateRouter>
+        ),
       },
     ],
   },
