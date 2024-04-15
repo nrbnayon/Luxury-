@@ -42,9 +42,12 @@ const OurRegion = () => {
           data-aos-delay="500"
           className="w-[90%] md:w-[50%] lg:w-[55%] mx-auto  text-sm lg:text-base font-normal"
         >
-          Dive into the latest posts on Retro Forum! Whether coding, comedy,
-          music and many more, stay updated with our vibrant community. Join the
-          conversation and explore the world of retro with us!
+          Explore our diverse regions and uncover the essence of luxury living
+          in each locale. From sun-kissed coastlines to picturesque mountain
+          retreats, our curated selection of regions offers unparalleled
+          opportunities for refined living and leisure. Immerse yourself in the
+          unique charm and beauty of each destination and embark on a journey to
+          discover your dream home in the perfect setting.
         </p>
       </div>
       <div ref={observerRef}>

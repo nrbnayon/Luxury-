@@ -4,11 +4,13 @@ import Root from "../Layout/Root";
 import Register from "./../Pages/Auth/Register";
 import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/NotFound/NotFound";
-import ContactForm from "../Pages/ContactForm/ContactForm";
 import OurService from "../Components/Home/OurService";
 import Villas from "../Pages/EstateVillas/EstateVillas";
 import EstateDetails from "../Components/Cards/EstateDetails";
 import PrivateRouter from "./PrivateRouter";
+import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
+import UserProfile from "../Pages/UserProfile/UserProfile";
+import Contact from "../Components/Home/Contact";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +41,26 @@ const router = createBrowserRouter([
         element: <OurService />,
       },
       {
-        path: "/contact",
-        element: <ContactForm />,
-      },
-      {
         path: "/updateprofile",
         element: (
           <PrivateRouter>
-            <EstateDetails />
+            <UpdateProfile />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/userprofile",
+        element: (
+          <PrivateRouter>
+            <UserProfile />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <PrivateRouter>
+            <Contact />
           </PrivateRouter>
         ),
       },

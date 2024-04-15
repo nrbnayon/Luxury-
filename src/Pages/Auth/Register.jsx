@@ -9,8 +9,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, updateProfile, loading, profileUpdating } =
-    useContext(AuthContext);
+  const { createUser, updateProfile } = useContext(AuthContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -19,10 +18,27 @@ const Register = () => {
     const username = form.get("username");
     const photourl = form.get("photourl");
     const email = form.get("email");
-    const password = form.get("password");
-    const cpassword = form.get("cpassword");
+    let password = form.get("password").trim();
+    let cpassword = form.get("cpassword").trim();
     const terms = e.target.terms.checked;
     setError("");
+    if (!username) {
+      setError("Username is required.");
+      return;
+    }
+    if (!photourl) {
+      setError("Photo URL is required.");
+      return;
+    }
+    if (!email) {
+      setError("Email is required.");
+      return;
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        setError("Invalid email format.");
+      }
+    }
     if (password !== cpassword) {
       setError("Passwords do not match");
       return;
@@ -39,24 +55,13 @@ const Register = () => {
       setError("Need to accept our terms and condition");
       return;
     }
-    // try {
-    //   const result = await createUser(email, password);
-    //   await updateProfile(result.user, {
-    //     displayName: username,
-    //     photoURL: photourl,
-    //   });
-    //   toast.success("Register Successful");
-    //   navigate("/");
-    // } catch (error) {
-    //   setError(error.message);
-    // }
     try {
       const result = await createUser(email, password);
       await updateProfile(result.user, {
         displayName: username,
         photoURL: photourl,
       });
-      toast.success("Register Successful");
+      toast.success("Register  Successful");
       navigate("/");
     } catch (error) {
       setError(error.message);
@@ -78,7 +83,6 @@ const Register = () => {
               name="username"
               placeholder="Enter your full name"
               className="input input-bordered"
-              required
             />
           </div>
           <div className="form-control">
@@ -90,7 +94,6 @@ const Register = () => {
               name="photourl"
               placeholder="Enter profile image url"
               className="input input-bordered"
-              required
             />
           </div>
           <div className="form-control">
@@ -151,7 +154,6 @@ const Register = () => {
             <label className="flex gap-1">
               <input
                 type="checkbox"
-                // defaultChecked
                 name="terms"
                 className="checkbox checkbox-info"
               />
@@ -160,25 +162,24 @@ const Register = () => {
               </span>
             </label>
           </div>
+          {error && (
+            <div className="border border-red-500 rounded p-2 text-warning mt-3">
+              {error}
+            </div>
+          )}
           <div className="mt-4">
-            <button
-              className="btn btn-primary w-full"
-              disabled={loading || profileUpdating}
-            >
-              Register
-            </button>
+            <button className="btn btn-primary w-full">Register</button>
           </div>
-          {error && <p>{error}</p>}
+
           <Typography variant="small" className="mt-6 flex justify-center">
             Already have an account?
             <Link
               as="a"
               to="/login"
-              variant="small"
               color="blue-gray"
-              className="ml-1 font-bold"
+              className="ml-1 text-md font-bold hover:underline text-info"
             >
-              Login here
+              LOGIN HERE
             </Link>
           </Typography>
         </form>

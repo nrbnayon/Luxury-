@@ -3,11 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Tooltip from "@mui/material/Tooltip";
 import Logo from "../../../assets/Images/hlogo.png";
-import LoaderSpinner from "../../../Components/LoaderSpinner/LoaderSpinner";
 import { toast } from "react-toastify";
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
-  const { user, logOut, loading } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
       .then(() => {
@@ -94,9 +93,6 @@ const NavBar = () => {
       </li>
     </>
   );
-  if (loading) {
-    return <LoaderSpinner />;
-  }
   return (
     <div className="navbar bg-base-100 shadow-lg md:px-4 fixed z-10 container mx-auto">
       <div className="navbar-start">
@@ -156,17 +152,20 @@ const NavBar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <p className="justify-between">Profile</p>
+                  <Link to="/userprofile">
+                    <p>Profile</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>Settings</p>
+                  <Link to="/contact">
+                    <p>Contact</p>
+                  </Link>
                 </li>
                 <li>
                   <label className="cursor-pointer grid place-items-center">
                     <input
                       onChange={handleTheme}
                       type="checkbox"
-                      defaultChecked
                       className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
                     />
                     <svg
@@ -226,7 +225,6 @@ const NavBar = () => {
               <input
                 onChange={handleTheme}
                 type="checkbox"
-                defaultChecked
                 className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
               />
               <svg

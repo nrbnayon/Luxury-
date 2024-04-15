@@ -47,6 +47,7 @@ const EstateDetails = () => {
   const customIcon = new Icon({
     iconUrl: `${image}`,
     iconSize: [38, 38],
+    className: "rounded-full",
   });
 
   const markers = [
@@ -323,7 +324,7 @@ const EstateDetails = () => {
         <h3 className="flex items-center text-2xl justify-center uppercase gap-1 text-center font-extrabold my-4">
           Availability
         </h3>
-        <div className="flex justify-between md:w-2/3 mx-auto flex-col md:flex-row items-center">
+        <div className="flex justify-between lg:w-2/3 mx-auto flex-col md:flex-row items-center">
           <div className="bg-white rounded text-black">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateCalendar />
@@ -372,9 +373,12 @@ const EstateDetails = () => {
                 borderRadius: "2rem",
                 position: "relative",
               }}
-              className=" mx-auto"
+              className="mx-auto z-[1]"
             >
-              <div className="map-wrapper" style={{ position: "relative" }}>
+              <div
+                className="map-wrapper z-[1]"
+                style={{ position: "relative" }}
+              >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

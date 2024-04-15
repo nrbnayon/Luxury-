@@ -5,7 +5,7 @@ const ContactForm = () => {
       <img src={FormBG} alt="FormBG" className="hidden lg:flex" />
       <div className="lg:absolute md:inset-0  lg:w-2/3 mx-auto md:h-1/2 my-auto p-4 ">
         <div className=" md:p-6 rounded-md flex flex-col md:flex-row gap-2">
-          <div className="bg-[#181D24] lg:w-1/3 p-4 rounded-tr-[50px] rounded-md text-center text-gray-400 text-base font-medium">
+          <div className="bg-[#181D24] lg:w-1/3 p-4 rounded-tl-[50px] rounded-md text-center text-gray-400 text-base font-medium">
             <h3 className="text-xl font-bold mb-4 text-white">
               Let&apos;s Connect
             </h3>
@@ -95,7 +95,7 @@ const ContactForm = () => {
                 placeholder="Write Your Message"
                 className="w-full ring-violet-600 border-b-2 rounded-lg"
               />
-              <button className="w-full btn btn-outline text-center">
+              <button className="w-full btn btn-secondary text-center">
                 SEND
               </button>
             </div>

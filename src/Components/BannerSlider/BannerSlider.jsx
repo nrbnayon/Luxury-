@@ -35,7 +35,7 @@ export default function BannerSlider() {
       >
         <SwiperSlide className="swiper-slide">
           <div className="relative" data-aos="fade-right" data-aos-delay="100">
-            <img src={Slider1} className=" rounded-br-3xl" />
+            <img src={Slider1} className=" rounded-br-3xl opacity-90" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -61,7 +61,7 @@ export default function BannerSlider() {
             data-aos-delay="600"
             data-aos-anchor="#anchor2"
           >
-            <img src={Slider2} className="rounded-br-3xl" />
+            <img src={Slider2} className="rounded-br-3xl opacity-90" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -87,7 +87,7 @@ export default function BannerSlider() {
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img src={Slider3} className="rounded-br-3xl" />
+            <img src={Slider3} className="rounded-br-3xl opacity-90" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"
@@ -113,7 +113,7 @@ export default function BannerSlider() {
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img src={Slider4} className="rounded-br-3xl" />
+            <img src={Slider4} className="rounded-br-3xl opacity-90" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"

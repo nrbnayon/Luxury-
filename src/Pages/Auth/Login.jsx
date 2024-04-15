@@ -1,14 +1,14 @@
 import { Typography } from "@material-tailwind/react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 const Login = () => {
-  const [googleLoginUser, setGoogleLoginUser] = useState(null);
   const [loginError, setLoginError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { signInUser, loginWithGoogle, loginWithGithub } =
@@ -19,7 +19,7 @@ const Login = () => {
     setLoginError("");
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
-    const password = form.get("password");
+    const password = form.get("password").trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       setLoginError("Email is required");
@@ -44,39 +44,43 @@ const Login = () => {
       ) {
         setLoginError("Invalid email or password");
       } else {
-        setLoginError(error.message);
+        setLoginError("Invalid email or password Try again");
       }
     }
   };
 
   const handleGoogleSignIn = () => {
     loginWithGoogle()
-      .then((result) => {
-        const newUser = result.user;
-        setGoogleLoginUser(newUser);
+      .then(() => {
+        // const newUser = result.user;
+        // setGoogleLoginUser(newUser);
         navigate(location?.state ? location.state : "/");
+        toast.success("Google Login Successfully");
       })
       .catch((error) => {
         setLoginError(error.message);
       });
-    console.log("Google login");
   };
-  console.log("google state", googleLoginUser);
 
   const handleGithubSignIn = () => {
     loginWithGithub()
-      .then((result) => {
-        const newUser = result.user;
-        console.log(newUser);
+      .then(() => {
+        // const newUser = result.user;
+
         navigate(location?.state ? location.state : "/");
+        toast.success("GitHub Login successful!");
       })
       .catch((error) => {
         setLoginError(error.message);
       });
   };
+
+  const handleFacebookLogin = () => {
+    setLoginError("OOPS! Not Build Yet. Please try others way");
+  };
   return (
     <div className="hero min-h-[calc(100vh-100px)] bg-[url('/bg1.png')]  rounded-xl">
-      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-80 my-4 md:my-10">
+      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-90 my-4 md:my-10">
         <form onSubmit={handleLogin} className="card-body">
           <h1 className="text-xl text-center md:text-3xl font-bold">
             Login Your Profile
@@ -97,29 +101,40 @@ const Login = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              className="input input-bordered"
-              required
-            />
-
-            {loginError && <p>{loginError}</p>}
-            <div className="mt-2">
-              <button className="btn btn-primary w-full">Login</button>
+            <div className="relative flex items-center w-full">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Create a password"
+                className="input input-bordered w-full pr-10"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-0 top-0 h-full flex items-center justify-center p-2"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
           </div>
+          {loginError && (
+            <div className="border border-red-500 rounded p-2 text-warning mt-3">
+              {loginError}
+            </div>
+          )}
 
+          <div className="mt-2">
+            <button className="btn btn-primary w-full">Login</button>
+          </div>
           <Typography variant="small" className="mt-6 flex justify-center">
             Don&apos;t have an account?
             <Link
               to="/register"
-              variant="small"
               color="blue-gray"
-              className="ml-1 font-bold hover:underline"
+              className="ml-1 text-md font-bold hover:underline text-info"
             >
-              Sign up now
+              SIGN UP NOW
             </Link>
           </Typography>
           <div className="divider">OR</div>
@@ -141,7 +156,10 @@ const Login = () => {
               <FcGoogle className="mr-1" />
               Google
             </button>
-            <button className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white">
+            <button
+              onClick={handleFacebookLogin}
+              className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white"
+            >
               <FaFacebook className="mr-1" />
               Facebook
             </button>
