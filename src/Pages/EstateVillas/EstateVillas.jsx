@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoaderSpinner from "../../Components/LoaderSpinner/LoaderSpinner";
+import ContactForm from "../ContactForm/ContactForm";
 
 const Villas = () => {
   const navigation = useNavigation();
@@ -41,7 +42,6 @@ const Villas = () => {
     <div className="overflow-x-hidden overflow-y-hidden">
       <div className="text-center">
         <h3 className="text-2xl font-semibold my-4">All Villas</h3>
-        {/* <p className="text-sm text-gray-500">{villas.length} results</p> */}
       </div>
       <div className="flex items-center justify-center md:w-1/3  rounded-[30px] mx-auto space-x-2 border bg-gray-200">
         <input
@@ -56,7 +56,7 @@ const Villas = () => {
         </button>
       </div>
       <section className="dark:bg-gray-100 dark:text-gray-800">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className="p-6 mx-auto space-y-6 sm:space-y-12">
           <div className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
             <div
               data-aos="fade-up"
@@ -211,12 +211,13 @@ const Villas = () => {
               </Link>
             </div>
           </div>
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid justify-center mx-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredVillas.slice(1, 10).map((villa) => (
               <Villa deletable={false} key={villa.id} villa={villa} />
             ))}
           </div>
         </div>
+        <ContactForm />
       </section>
     </div>
   );

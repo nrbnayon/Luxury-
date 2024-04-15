@@ -14,25 +14,14 @@ const Villa = ({ villa }) => {
     AOS.init();
   }, []);
 
-  const {
-    id,
-    estate_title,
-    segment_name,
-    description,
-    price,
-    status,
-    area,
-    location,
-    facilities,
-    image,
-  } = villa;
+  const { id, estate_title, description, price, area, location, image } = villa;
   if (navigation.state === "loading" || !villa) {
     return <LoaderSpinner />;
   }
   return (
-    <div className="overflow-x-hidden overflow-y-hidden">
+    <div className="overflow-x-hidden overflow-y-hidden transition-transform duration-300 hover:scale-105 mx-auto">
       <div
-        className="max-w-sm relative rounded-md mx-auto group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]"
+        className="max-w-sm relative rounded-md group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]"
         data-aos="fade-up"
       >
         <div

@@ -8,6 +8,8 @@
     "status": "sale",
     "area": "6000 sq ft",
     "location": "Maui, Hawaii",
+    "latitude": 20.7984,
+    "longitude": -156.3319,
     "facilities": [
       "Private infinity pool",
       "Poolside cabana",
@@ -25,6 +27,8 @@
     "status": "sale",
     "area": "12,000 sq ft",
     "location": "Malibu, California",
+    "latitude": 34.0259,
+    "longitude": -118.7798,
     "facilities": [
       "Private beach access",
       "Infinity pool",
@@ -42,6 +46,8 @@
     "status": "rent",
     "area": "2500 sq ft",
     "location": "Amazon Forest, Brazil",
+    "latitude": -3.4653,
+    "longitude": -62.2159,
     "facilities": [
       "Private terrace",
       "Swimming pool",
@@ -59,6 +65,8 @@
     "status": "sale",
     "area": "30 acres",
     "location": "The Seychelles",
+    "latitude": -4.6796,
+    "longitude": 55.492,
     "facilities": ["Luxury villas", "Private marina", "Helipad", "Spa"],
     "image": " https://i.ibb.co/Xxp89fD/banner2.png"
   },
@@ -71,6 +79,8 @@
     "status": "rent",
     "area": "4000 sq ft",
     "location": "Ibiza, Spain",
+    "latitude": 38.9067,
+    "longitude": 1.4206,
     "facilities": [
       "Private pool",
       "Gourmet kitchen",
@@ -88,6 +98,8 @@
     "status": "sale",
     "area": "15,000 sq ft",
     "location": "Los Angeles, California",
+    "latitude": 34.0522,
+    "longitude": -118.2437,
     "facilities": [
       "Infinity pool",
       "Home theater",
@@ -105,6 +117,8 @@
     "status": "rent",
     "area": "5000 sq ft",
     "location": "Sydney, Australia",
+    "latitude": -33.8688,
+    "longitude": 151.2093,
     "facilities": [
       "Private dock",
       "Infinity pool",
@@ -122,6 +136,8 @@
     "status": "sale",
     "area": "8000 sq ft",
     "location": "Aspen, Colorado",
+    "latitude": 39.1911,
+    "longitude": -106.8175,
     "facilities": [
       "Ski-in/ski-out access",
       "Outdoor hot tub",
@@ -139,6 +155,8 @@
     "status": "rent",
     "area": "10 acres",
     "location": "Maui, Hawaii",
+    "latitude": 20.7984,
+    "longitude": -156.3319,
     "facilities": [
       "Private beach access",
       "Infinity pools",
@@ -156,6 +174,8 @@
     "status": "rent",
     "area": "20 acres",
     "location": "Aspen, Colorado",
+    "latitude": 39.1911,
+    "longitude": -106.8175,
     "facilities": [
       "Private hiking trails",
       "Outdoor hot tub",

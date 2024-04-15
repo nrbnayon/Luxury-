@@ -74,7 +74,7 @@ const ContactForm = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full ring-violet-600 border-b-2"
+                className="w-full ring-violet-600 border-b-2 rounded-lg"
               />
             </div>
             <div className="col-span-6 sm:col-span-3">
@@ -84,7 +84,7 @@ const ContactForm = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full ring-violet-600 border-b-2"
+                className="w-full ring-violet-600 border-b-2 rounded-lg"
               />
             </div>
             <div className="col-span-6">
@@ -93,7 +93,7 @@ const ContactForm = () => {
               </label>
               <textarea
                 placeholder="Write Your Message"
-                className="w-full ring-violet-600 border-b-2"
+                className="w-full ring-violet-600 border-b-2 rounded-lg"
               />
               <button className="w-full btn btn-outline text-center">
                 SEND
