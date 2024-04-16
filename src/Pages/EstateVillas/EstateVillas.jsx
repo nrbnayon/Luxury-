@@ -203,6 +203,7 @@ const Villas = () => {
               </div>
               <Link
                 to={`/estatedetails/${parseInt(villas[0].id)}`}
+                state={villas[0].estate_title}
                 className="w-full"
               >
                 <button className="btn btn-outline w-full border-secondary uppercase">

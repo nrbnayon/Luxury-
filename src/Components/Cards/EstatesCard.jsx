@@ -198,7 +198,10 @@ const EstatesCard = ({ villas }) => {
                 </div>
               </CardBody>
               <CardFooter className="pt-0">
-                <Link to={`/estatedetails/${parseInt(villa.id)}`}>
+                <Link
+                  to={`/estatedetails/${parseInt(villa.id)}`}
+                  state={villa.estate_title}
+                >
                   <Button size="lg" fullWidth={true}>
                     View Property
                   </Button>

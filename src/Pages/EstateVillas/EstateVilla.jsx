@@ -22,12 +22,12 @@ const Villa = ({ villa }) => {
     <div className="overflow-x-hidden overflow-y-hidden transition-transform duration-300 hover:scale-105 mx-auto">
       <div
         className="max-w-sm relative rounded-md group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]"
-        data-aos="fade-up"
+        // data-aos="fade-up"
       >
         <div
           className="relative"
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="1000"
         >
           <img
             role="presentation"
@@ -173,7 +173,10 @@ const Villa = ({ villa }) => {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
-          <Link to={`/estatedetails/${parseInt(id)}`}>
+          <Link
+            to={`/estatedetails/${parseInt(id)}`}
+            state={villa.estate_title}
+          >
             <button className="btn btn-outline w-full border-primary uppercase">
               View Property
             </button>

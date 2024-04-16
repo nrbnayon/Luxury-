@@ -1,9 +1,34 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
 const Root = () => {
+  const location = useLocation();
+  const [pageTitle, setPageTitle] = useState("");
+
+  console.log(location, "page title", pageTitle);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setPageTitle("Luxury Rentals - HOME");
+    } else if (
+      location.state === "/userprofile" ||
+      location.state === "/updateprofile" ||
+      location.state === "/contact"
+    ) {
+      setPageTitle("Luxury Rentals - Login");
+    } else if (location.state) {
+      setPageTitle(location.state);
+    } else {
+      setPageTitle(`Luxury Rentals - ${location.pathname.replace("/", "")}`);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    document.title = pageTitle;
+  }, [pageTitle]);
   return (
     <div>
       <div className="container mx-auto overflow-x-hidden">
