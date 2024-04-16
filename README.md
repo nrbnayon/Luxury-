@@ -4,7 +4,7 @@
 
 Experience luxury living at: [Luxury Rentals](https://luxuryrentals.netlify.app/). Explore our exquisite collection of properties and indulge in the epitome of sophistication and elegance.
 
-![Website Screenshot](/luxuryhome.png)
+![Website Screenshot](/public/luxuryhome.png)
 
 Luxury Rentals is a sophisticated and elegant platform dedicated to showcasing exquisite properties including penthouses, beachfront estates, resorts, private islands, villas, and mansions. With a focus on luxury living, our website offers an immersive experience for users to explore and indulge in the world of opulent real estate.
 
