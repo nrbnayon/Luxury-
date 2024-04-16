@@ -8,8 +8,6 @@ const Root = () => {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState("");
 
-  console.log(location, "page title", pageTitle);
-
   useEffect(() => {
     if (location.pathname === "/") {
       setPageTitle("Luxury Rentals - HOME");
