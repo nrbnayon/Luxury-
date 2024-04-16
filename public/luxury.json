@@ -2,7 +2,7 @@
   {
     "id": 1,
     "estate_title": "Luxury Beachfront Resort Villa",
-    "segment_name": "Luxury",
+    "segment_name": "Beachfront Resort",
     "description": "Experience the epitome of luxury in this stunning resort villa. Nestled along the pristine coastline, this villa offers breathtaking ocean views, private beach access, and world-class amenities.",
     "price": "$20,000,000",
     "status": "sale",
@@ -21,7 +21,7 @@
   {
     "id": 2,
     "estate_title": "Exclusive Beachfront Mansion",
-    "segment_name": "Luxury",
+    "segment_name": "Mansion",
     "description": "Indulge in luxury living in this exclusive beachfront mansion. With expansive ocean views, lavish interiors, and unparalleled privacy, this estate is perfect for those seeking the ultimate coastal retreat.",
     "price": "$25,000,000",
     "status": "sale",
@@ -40,9 +40,9 @@
   {
     "id": 3,
     "estate_title": "Luxury Forest Penthouse",
-    "segment_name": "Luxury",
+    "segment_name": "Penthouse",
     "description": "Experience luxury living at its finest in this oceanfront penthouse. With panoramic views of the sea, designer finishes, and exclusive amenities, this penthouse offers the ultimate coastal lifestyle.",
-    "price": "$15,000/month",
+    "price": "$15,000 / week",
     "status": "rent",
     "area": "2500 sq ft",
     "location": "Amazon Forest, Brazil",
@@ -59,7 +59,7 @@
   {
     "id": 4,
     "estate_title": "Exclusive Private Island Retreat",
-    "segment_name": "Luxury",
+    "segment_name": "Private Island",
     "description": "Escape to your own private paradise on this exclusive island retreat. With pristine beaches, lush landscapes, and luxurious accommodations, this estate offers unmatched seclusion and tranquility.",
     "price": "$50,000,000",
     "status": "sale",
@@ -73,7 +73,7 @@
   {
     "id": 5,
     "estate_title": "Luxurious Villa with Private Pool",
-    "segment_name": "Luxury",
+    "segment_name": "Luxurious",
     "description": "Indulge in the ultimate luxury lifestyle in this exquisite villa. Featuring a private pool, lush gardens, and elegant interiors, this villa offers unparalleled comfort and sophistication.",
     "price": "$12,000 / month",
     "status": "rent",
@@ -92,7 +92,7 @@
   {
     "id": 6,
     "estate_title": "Luxury Hilltop Mansion",
-    "segment_name": "Luxury",
+    "segment_name": "Mansion",
     "description": "Perched atop a scenic hill, this luxurious mansion offers panoramic views of the city skyline. With expansive living spaces, resort-style amenities, and impeccable craftsmanship, this estate is perfect for discerning buyers.",
     "price": "$18,000.000",
     "status": "sale",
@@ -111,9 +111,9 @@
   {
     "id": 7,
     "estate_title": "Exclusive Waterfront Villa",
-    "segment_name": "Luxury",
+    "segment_name": "Waterfront",
     "description": "Embrace waterfront living in this exclusive villa overlooking the bay. With stunning views, luxurious amenities, and meticulous attention to detail, this villa offers the epitome of coastal luxury.",
-    "price": "$20,000 / month",
+    "price": "$20,0000 / month",
     "status": "rent",
     "area": "5000 sq ft",
     "location": "Sydney, Australia",
@@ -130,10 +130,10 @@
   {
     "id": 8,
     "estate_title": "Luxury Mountain Retreat",
-    "segment_name": "Luxury",
+    "segment_name": "Mountain",
     "description": "Escape to the tranquility of the mountains in this luxurious retreat. Surrounded by majestic peaks and pristine nature, this estate offers unparalleled privacy and serenity.",
-    "price": "$7,500,000",
-    "status": "sale",
+    "price": "$1,500 / Day",
+    "status": "rent",
     "area": "8000 sq ft",
     "location": "Aspen, Colorado",
     "latitude": 39.1911,
@@ -149,7 +149,7 @@
   {
     "id": 9,
     "estate_title": "Exclusive Oceanfront Resort",
-    "segment_name": "Luxury",
+    "segment_name": "Resort",
     "description": "Experience luxury resort living in this exclusive oceanfront property. With world-class amenities, pristine beaches, and impeccable service, this resort offers an unparalleled vacation experience.",
     "price": "$50,00  / week",
     "status": "rent",
@@ -168,9 +168,9 @@
   {
     "id": 10,
     "estate_title": "Secluded Mountain Retreat",
-    "segment_name": "Luxury",
+    "segment_name": "Mountain",
     "description": "Escape to this secluded mountain retreat and immerse yourself in the tranquility of nature. Surrounded by lush forests and breathtaking mountain views, this exclusive estate offers the ultimate getaway for relaxation and rejuvenation.",
-    "price": "$25,00 / Per Day",
+    "price": "$25,00 / Day",
     "status": "rent",
     "area": "20 acres",
     "location": "Aspen, Colorado",
