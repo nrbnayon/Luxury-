@@ -68,8 +68,8 @@ const Villas = () => {
                 src={villas[0].image}
                 alt="villa img"
               />
-              <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md">
-                From: {villas[0].price}
+              <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md uppercase">
+                {villas[0].status}: {villas[0].price}
               </p>
               <div className="absolute top-3 right-3 text-2xl text-red-500">
                 <FaShieldHeart />

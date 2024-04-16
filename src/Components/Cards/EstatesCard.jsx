@@ -59,6 +59,9 @@ const EstatesCard = ({ villas }) => {
                   <img src={villa.image} className="h-full w-full " />
                 </div>
                 <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+                <p className="absolute top-4 left-3 bg-white text-black px-2 py-1 rounded-md uppercase">
+                  {villa.status}: {villa.price}
+                </p>
                 <IconButton
                   size="sm"
                   color="red"

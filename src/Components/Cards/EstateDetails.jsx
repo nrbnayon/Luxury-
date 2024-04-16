@@ -89,8 +89,8 @@ const EstateDetails = () => {
               alt="villa"
               className="w-full h-full  rounded-br-[50px] rounded-md"
             />
-            <p className="absolute top-5 left-5 bg-white text-black px-2 py-1 rounded-md">
-              From: {price}
+            <p className="absolute top-5 left-5 bg-white text-black px-2 py-1 rounded-md uppercase">
+              {status}: {price}
             </p>
             <div className="absolute top-5 right-5 text-2xl text-red-500">
               <FaShieldHeart />

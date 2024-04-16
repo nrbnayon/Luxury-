@@ -62,6 +62,7 @@ export default function BannerSlider() {
             data-aos-anchor="#anchor2"
           >
             <img src={Slider2} className="rounded-br-3xl opacity-90" />
+            <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h3
                 className="text-white text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase"

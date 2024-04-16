@@ -14,16 +14,22 @@ const Villa = ({ villa }) => {
     AOS.init();
   }, []);
 
-  const { id, estate_title, description, price, area, location, image } = villa;
+  const {
+    id,
+    estate_title,
+    description,
+    price,
+    area,
+    location,
+    image,
+    status,
+  } = villa;
   if (navigation.state === "loading" || !villa) {
     return <LoaderSpinner />;
   }
   return (
     <div className="overflow-x-hidden overflow-y-hidden transition-transform duration-300 hover:scale-105 mx-auto">
-      <div
-        className="max-w-sm relative rounded-md group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]"
-        // data-aos="fade-up"
-      >
+      <div className="max-w-sm relative rounded-md group transition border-2 border-opacity-30 border-primary hover:border-secondary hover:scale-105 hover:no-underline focus:no-underline dark:bg-gray-50 rounded-br-[50px]">
         <div
           className="relative"
           data-aos="fade-right"
@@ -35,8 +41,9 @@ const Villa = ({ villa }) => {
             src={image}
             alt="villa img"
           />
-          <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md">
-            From: {price}
+          <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+          <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md uppercase">
+            {status}: {price}
           </p>
           <div className="absolute top-3 right-3 text-2xl text-red-500">
             <FaShieldHeart />
