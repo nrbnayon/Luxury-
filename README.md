@@ -1,6 +1,6 @@
 # Luxury Rentals
 
-## Live Site: [Click Me Here](https://luxuryrentals.netlify.app/)
+## Live Site: [Click Here](https://luxuryrentals.netlify.app/)
 
 Experience luxury living at: [Luxury Rentals](https://luxuryrentals.netlify.app/). Explore our exquisite collection of properties and indulge in the epitome of sophistication and elegance.
 
